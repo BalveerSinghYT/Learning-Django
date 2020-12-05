@@ -4,10 +4,22 @@ from django.contrib.auth import authenticate, login, logout
 # password for user veer is Veer$$@@
 
 # Create your views here.
+
 def index(request):
-    if request.user.is_anonymous:
-        return redirect('/login')
-    return render(request, 'index.html')
+    context = {
+        'display_logout': 'Logout'
+    }
+    
+    if request.user.is_authenticated:
+        print("Logged in")
+        return render(request, 'index.html', context)
+    else:
+        print("Not logged in")
+        return render(request, 'index.html')
+
+    #if request.user.is_anonymous:
+    #    return redirect('/login')
+    #return render(request, 'index.html')
 
 def loginUser(request):
     if request.method == "POST":
@@ -23,6 +35,9 @@ def loginUser(request):
          
     return render(request, 'login.html')
 
-def logoutUser(request):
+def logoutUser(request):   
     logout(request)
     return redirect('/login')
+
+def registeration(request):
+    return render(request, 'registeration.html')
