@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-
+from home.models import registeration
 # password for user veer is Veer$$@@
 
 # Create your views here.
@@ -39,5 +39,13 @@ def logoutUser(request):
     logout(request)
     return redirect('/login')
 
-def registeration(request):
+def Registeration(request):
     return render(request, 'registeration.html')
+
+def base(request):
+    return render(request, 'base.html')
+
+def records(request):
+    data = registeration.objects.all()
+    print(data)
+    return render(request, 'records.html', {'data': data})
