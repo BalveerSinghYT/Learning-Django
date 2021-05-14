@@ -3,16 +3,105 @@
 <style>
   .center {
     margin: auto;
-    width: 60%;
+    width: 90%;
     padding: 80px;
+  
+  }
+
+  .main-img{
+    position: absolute;
+    width: 10%;
+    left: 700px;
+    top: 85px;
+  }
+
+  .middle{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.905);
+    padding-bottom: 100px;
+  }
+
+  .middle h2{
+    padding-top:30px ;
+    padding-bottom: 30px;
+    /* border: 3px solid blue; */
+    margin: auto;
+    text-align: center;
+  }
+
+  .middle li{
+    margin-left: 40px;
+    margin-bottom: 10px;
+    padding-left: 34px;
+    width: 40%;
+    /* border: 3px solid blue; */
+  }
+
+  .examples{
+    background-color: white;
+    padding-bottom: 30px;
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  .examples h3{
+    text-align: center;
+    padding-bottom: 10px ;
+    margin-bottom: 20px;
+  }
+
+  #snap1{
+    margin-left: 20px;
+    height: 340px;
+    border: 3px solid green;
+  }
+
+  #snap2{
+    border: 3px solid orange;
+    margin-left: 20px;
+    height: 340px;
+  }
+
+  .footer{
+    background-color: black;
+    color: white;
+    text-align: center;
   }
 </style>
 {% endblock style %} 
 
 {% block BodyHomePage %}
+
+<div class="main-img">
+  <img src="static/images/Main.png" alt="main-img" width="350">
+</div>
+
 <div class="center">
-  <h1>Welcome to Attendance System</h1>
+  <h1>Welcome to,<br> Attendance System</h1>
   <a class="btn btn-primary" href="/login">Login</a>
   <a href="/logout">{{ display_logout }}</a>
 </div>
+
+<div class="middle">
+  <h2>Features</h2>
+  <ul class="list">
+    <li class="items">Good And Accurate</li>
+    <li class="items">Good And Accurate</li>
+    <li class="items">Good And Accurate</li>
+    <li class="items">Good And Accurate</li>
+    
+  </ul>  
+</div>
+
+<div class="examples">
+  <h3><u>Snapshot</u></h3>
+  <img src="static/images/snap1.png" alt="Attendance Demo" id="snap1">
+  <img src="static/images/snap2.png" alt="Recognition Demo" id="snap2">
+</div>
+<footer class="footer">
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://veerdavlog.blogspot.com/">Veer</a>
+  </div>
+</footer>
 {% endblock BodyHomePage %}

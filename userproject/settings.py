@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'userproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'studentbase',
+        'NAME': 'AttendanceDB',
         'USER': 'postgres',
-        'PASSWORD': '1234',
+        'PASSWORD': 'veer',
         'HOST': 'localhost',
     }
 }
@@ -127,5 +127,4 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
+
