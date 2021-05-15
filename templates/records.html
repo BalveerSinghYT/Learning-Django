@@ -11,18 +11,18 @@
         <th scope="col">Roll No</th>
         <th scope="col">Email</th>
         <th scope="col">Department</th>
-        <th scope="col">Image</th>
+        <th scope="col">Phone No</th>
         </tr>
     </thead>
     <tbody>
         {% for i in data %}
             <tr>
-            <th scope="row">{{i.id}}</th>
+            <th scope="row">{{forloop.counter}}</th>
                 <td>{{i.name}}</td>
                 <td>{{i.roll_no}}</td>
                 <td>{{i.email}}</td>
                 <td>{{i.department}}</td>
-                <td>{{i.img}}</td>
+                <td>{{i.phone}}</td>
             </tr>
         {% endfor %}
         <tr>
