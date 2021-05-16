@@ -68,5 +68,6 @@ def records(request):
     return render(request, 'records.html', {'data': data})
 
 def attendance_data(request):
-    data = attendance.objects.all()
+    data = registeration.objects.raw('SELECT roll_no, home_registeration.name, home_attendance.date, home_attendance.status from home_registeration inner join home_attendance on home_registeration.roll_no=home_attendance.roll_no_id;')
+    print(data.columns)
     return render(request, 'attendance.html', {'data':data})
