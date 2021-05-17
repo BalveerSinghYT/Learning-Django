@@ -9,24 +9,27 @@
   }
 
   .main-img{
+    border: 3px solid rgba(0, 0, 255, 0.592);
     position: absolute;
-    width: 10%;
-    left: 700px;
-    top: 85px;
+    width: 38%;
+    left: 650px;
+    top: 60px;
+    border-radius: 20px;
   }
 
   .middle{
     color: white;
     background-color: rgba(0, 0, 0, 0.905);
-    padding-bottom: 100px;
+    padding-bottom: 60px;
   }
 
   .middle h2{
-    padding-top:30px ;
-    padding-bottom: 30px;
+    padding-top:40px ;
+    padding-bottom: 20px;
     /* border: 3px solid blue; */
     margin: auto;
     text-align: center;
+    font-size: 40px;
   }
 
   .middle li{
@@ -35,6 +38,25 @@
     padding-left: 34px;
     width: 40%;
     /* border: 3px solid blue; */
+  }
+
+  .items{
+    /* border: 3px solid green; */
+    width: 60%;
+    font-size: 30px;
+    top: 50px;
+    left: 30px;
+    position: relative;
+  }
+
+  .items-1{
+    /* border: 3px solid blue; */
+    font-size: 30px;
+    left: 600px;
+    bottom: 60px;
+    margin-left: 20px;
+    padding-left: 40px;
+    position: relative;
   }
 
   .examples{
@@ -48,17 +70,19 @@
     text-align: center;
     padding-bottom: 10px ;
     margin-bottom: 20px;
+    font-size: 40px;
   }
 
   #snap1{
-    margin-left: 20px;
+    margin-left: 38px;
     height: 340px;
     border: 3px solid green;
   }
 
   #snap2{
     border: 3px solid orange;
-    margin-left: 20px;
+    margin-left: 40px;
+    margin-right: auto;
     height: 340px;
   }
 
@@ -72,8 +96,8 @@
 
 {% block BodyHomePage %}
 
-<div class="main-img">
-  <img src="static/images/Main.png" alt="main-img" width="350">
+<div class="main-img-div">
+  <img class="main-img" src="static/images/Main.png" alt="main-img" >
 </div>  
 
 <div class="center">
@@ -87,8 +111,8 @@
   <ul class="list">
     <li class="items">Good And Accurate</li>
     <li class="items">Liveness Detection</li>
-    <li class="items">Accuracy upto 90%</li>
-    <li class="items">Attendance Marking</li>
+    <li class="items-1">Accuracy upto 90%</li>
+    <li class="items-1">Attendance Marking</li>
     
   </ul>  
 </div>
