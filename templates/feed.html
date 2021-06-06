@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+
+{% block styleFeed %}
+    <style>
+        .feedblock{
+            margin:auto;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+    </style>
+    
+{% endblock styleFeed %}
+
+
+{% block FeedPage %}
+<div class="feedblock">
+    <h1>Video Live Stream</h1>
+    <img src="{% url 'livefeed' %}">    
+</div>
+
+
+{% endblock FeedPage %}
