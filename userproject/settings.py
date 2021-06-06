@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'userproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'AttendanceDB',
-        'USER': 'postgres',
-        'PASSWORD': 'veer',
+        'NAME': 'attendancedb',
+        'USER': 'veer',
+        'PASSWORD': 'veercloud@db',
         'HOST': 'localhost',
     }
 }

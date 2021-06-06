@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from home.models import registeration, attendance
+from django.views.decorators import gzip
+from django.http import StreamingHttpResponse
+import cv2
+import threading
 
 # password for user veer is Veer$$@@
 
@@ -71,3 +75,37 @@ def attendance_data(request):
     data = registeration.objects.raw('SELECT roll_no, home_registeration.name, home_attendance.date, home_attendance.status from home_registeration inner join home_attendance on home_registeration.roll_no=home_attendance.roll_no_id;')
     print(data.columns)
     return render(request, 'attendance.html', {'data':data})
+
+class VideoCamera(object):
+    def __init__(self):
+        self.video = cv2.VideoCapture(0)
+        (self.grabbed, self.frame) = self.video.read()
+        threading.Thread(target=self.update, args=()).start()
+
+    def __del__(self):
+        self.video.release()
+
+    def get_frame(self):
+        image = self.frame
+        _, jpeg = cv2.imencode('.jpg', image)
+        return jpeg.tobytes()
+
+    def update(self):
+        while True:
+            (self.grabbed, self.frame) = self.video.read()
+
+
+def gen(camera):
+    while True:
+        frame = camera.get_frame()
+        yield(b'--frame\r\n'
+              b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+
+@gzip.gzip_page
+def livefe(request):
+    try:
+        cam = VideoCamera()
+        return StreamingHttpResponse(gen(cam), content_type="multipart/x-mixed-replace;boundary=frame")
+    except:  # This is bad! replace it with proper handling
+        pass
