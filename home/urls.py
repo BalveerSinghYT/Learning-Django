@@ -9,7 +9,10 @@ urlpatterns = [
     path('register', views.Registeration, name="register"),
     path('base', views.base, name="base"),
     path('records', views.records, name="records"),
-    path('attendance', views.attendance_data, name="attendance_data")
+    path('attendance', views.attendance_data, name="attendance_data"),
+    path('livefeed', views.livefeed, name="livefeed"),
+    path('feed', views.feed, name="feed"),
+
 ]
 
 admin.site.index_title = "SAS Admin"
