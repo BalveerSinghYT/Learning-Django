@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os, whitenoise
-import django_heroku
-import dj_database_url
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,18 +78,15 @@ WSGI_APPLICATION = 'userproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'AttendanceDB',
-#         'USER': 'postgres',
-#         'PASSWORD': 'veer',
-#         'HOST': 'localhost',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'database name',
+        'USER': 'database user',
+        'PASSWORD': 'database password',
+        'HOST': 'database endpoint',
+        'PORT' : 'database port',
+    }
 }
 
 
@@ -136,5 +132,3 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 STATIC_ROOT = '/static/'
-
-django_heroku.settings(locals())
