@@ -28,7 +28,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https://live-facial-attendance-system.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', 'live-facial-attendance-system.herokuapp.com']
 
 
 # Application definition
