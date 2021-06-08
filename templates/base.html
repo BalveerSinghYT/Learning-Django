@@ -16,10 +16,10 @@
     {% block login_head %}
 
     {% endblock login_head %}
-
+{% comment %} 
     {% block styleFeed %}
 
-    {% endblock styleFeed %}
+    {% endblock styleFeed %} {% endcomment %}
 
 </head>
 
@@ -49,9 +49,9 @@
                     <a class="nav-link" href="/attendance">Attendance</a>
                 </li>
 
-                <li class="nav-item active">
+                {% comment %} <li class="nav-item active">
                     <a class="nav-link" href="/feed">Feed</a>
-                </li>
+                </li> {% endcomment %}
 
             </ul>
         </div>
@@ -66,7 +66,7 @@
 
     {% block login %} {% endblock login %}
     
-    {% block FeedPage %} {% endblock FeedPage %}
+    {% comment %} {% block FeedPage %} {% endblock FeedPage %} {% endcomment %}
 </body>
 
 </html>

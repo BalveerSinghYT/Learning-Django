@@ -10,8 +10,8 @@ urlpatterns = [
     path('base', views.base, name="base"),
     path('records', views.records, name="records"),
     path('attendance', views.attendance_data, name="attendance_data"),
-    path('livefeed', views.livefeed, name="livefeed"),
-    path('feed', views.feed, name="feed"),
+    # path('livefeed', views.livefeed, name="livefeed"),
+    # path('feed', views.feed, name="feed"),
 
 ]
 

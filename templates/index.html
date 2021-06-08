@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 {% block style %}
 <style>
+  
   .center {
     margin: auto;
     width: 90%;
@@ -9,12 +10,19 @@
   }
 
   .main-img{
-    border: 3px solid rgba(0, 0, 255, 0.592);
+    /* {% comment %} margin: 
+    
     position: absolute;
     width: 38%;
     left: 650px;
     top: 60px;
+    border-radius: 20px; {% endcomment %} */
+    width: 400px;
+    position: absolute;
+    right:20px;
+    left: 68%;
     border-radius: 20px;
+    border: 3px solid rgba(0, 0, 255, 0.592);
   }
 
   .middle{
@@ -95,32 +103,34 @@
 {% endblock style %} 
 
 {% block BodyHomePage %}
-
-<div class="main-img-div">
-  <img class="main-img" src="static/images/Main.png" alt="main-img" >
-</div>  
-
-<div class="center">
-  <h1><b>Welcome to,<br> Attendance System</b></h1>
-  <a class="btn btn-primary" href="/login">Login</a>
-  <a href="/logout">{{display_logout}}</a>
-</div>
-
-<div class="middle">
-  <h2><b>Features</b></h2>
-  <ul class="list">
-    <li class="items">Good And Accurate</li>
-    <li class="items">Liveness Detection</li>
-    <li class="items-1">Accuracy upto 90%</li>
-    <li class="items-1">Attendance Marking</li>
-    
-  </ul>  
-</div>
-
-<div class="examples">
-  <h3><b><u>Snapshot</u></b></h3>
-  <img src="static/images/snap1.png" alt="Attendance Demo" id="snap1">
-  <img src="static/images/snap2.png" alt="Recognition Demo" id="snap2">
+<div class="body">
+  <div class="main-img-div">
+    <img class="main-img" src="static/images/Main.png" alt="main-img" >
+  </div>  
+  
+  <div class="center">
+    <h1><b>Welcome to,<br> Attendance System</b></h1>
+    <a class="btn btn-primary" href="/login">Login</a>
+    <a href="/logout">{{display_logout}}</a>
+  </div>
+  
+  <div class="middle">
+    <h2><b>Features</b></h2>
+    <ul class="list">
+      <li class="items">Good And Accurate</li>
+      <li class="items">Liveness Detection</li>
+      <li class="items-1">Accuracy upto 90%</li>
+      <li class="items-1">Attendance Marking</li>
+      
+    </ul>  
+  </div>
+  
+  <div class="examples">
+    <h3><b><u>Snapshot</u></b></h3>
+    <img src="static/images/snap1.png" alt="Attendance Demo" id="snap1">
+    <img src="static/images/snap2.png" alt="Recognition Demo" id="snap2">
+  </div>
+  
 </div>
 <footer class="footer">
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">

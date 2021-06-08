@@ -25,7 +25,7 @@ SECRET_KEY = 'x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'userproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'attendancedb',
-        'USER': 'veer',
-        'PASSWORD': 'veercloud@db',
+        'NAME': 'AttendanceDB',
+        'USER': 'postgres',
+        'PASSWORD': 'veer',
         'HOST': 'localhost',
     }
 }
