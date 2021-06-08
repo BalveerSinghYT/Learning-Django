@@ -85,7 +85,6 @@ DATABASES = {
         'USER': 'database user',
         'PASSWORD': 'database password',
         'HOST': 'database endpoint',
-        'PORT' : 'database port',
     }
 }
 
