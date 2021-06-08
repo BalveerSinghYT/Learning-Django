@@ -25,7 +25,7 @@ SECRET_KEY = 'x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'https://live-facial-attendance-system.herokuapp.com/']
 
 
 # Application definition
