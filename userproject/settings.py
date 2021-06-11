@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os, whitenoise
 # import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$
 SECRET_KEY = os.environ['SECRET_KEY']
 
+# SECRET_KEY = 'x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$'
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -61,7 +64,7 @@ ROOT_URLCONF = 'userproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / "home/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,6 +144,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "home/static",
 ]
 STATIC_ROOT = '/static/'
+
+django_heroku.settings(locals())

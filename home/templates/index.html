@@ -1,0 +1,193 @@
+{% extends 'base.html' %} {% block style %}
+<style>
+  .center {
+    position: absolute;
+    width: 492px;
+    height: 100px;
+    left: 109px;
+    top: 220px;
+
+    /* Desktop / Display Medium */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 50px;
+    /* or 104% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+
+    /* Primary / Default */
+
+    color: #5f2eea;
+  }
+
+  .main-img {
+    position: absolute;
+    width: 619px;
+    height: 705px;
+    left: 720px;
+    top: 57px;
+
+    background: #FFFFFF;
+    /* Drop Shadow Large */
+
+    box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
+    border-radius: 20px;
+  }
+
+  .middle {
+    position: absolute;
+    width: 276px;
+    height: 152px;
+    left: 100px;
+    top: 570px;
+
+    /* Desktop / Text Large */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 38px;
+    /* or 158% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.75px;
+
+    /* Primary / Default */
+
+    color: #5F2EEA;
+
+  }
+
+  
+  #login {
+    position: absolute;
+    width: 200px;
+    height: 64px;
+    left: 107px;
+    top: 369px;
+
+    /* Drop Shadow Large */
+
+  }
+
+  #login p{
+    border: 2px solid #5F2EEA;
+    border-radius: 40px;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    width: 161px;
+    padding-top: 0px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 0px;
+
+    /* Desktop / Link Small */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+
+    /* Grayscale / Background */
+    background: #5F2EEA;
+    color: #F7F7FC;
+
+  }
+
+  #signup {
+    box-sizing: border-box;
+    border-radius: 40px;
+    position: absolute;
+    width: 200px;
+    height: 64px;
+    left: 280px;
+    top: 369px;
+
+    
+  }
+
+  #signup p{
+    border: 2px solid #5F2EEA;
+    border-radius: 40px;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 0%;
+    bottom: 0%;
+    width: 161px;
+    padding-top: 0px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 0px;
+    /* Desktop / Link Small */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+
+    /* Primary / Default */
+
+    color: #5F2EEA;
+   
+  }
+
+
+</style>
+{% endblock style %}
+
+{% block BodyHomePage %}
+<div class="main-img-div">
+  <img class="main-img" src="/static/Images/Frame.png" alt="main-img" />
+</div>
+
+<div class="center">
+  <h1>
+    <b>Welcome to,<br />
+      Attendance System</b>
+  </h1>
+</div>
+
+<div class="buttons">
+  <a id="login" href="/login"><p>Login</p></a>
+  
+  <a id="signup" href="/register"><p>Sign Up</p></a>
+  <a id="logout" href="/logout">{{display_logout}}</a>
+</div>
+
+<div class="middle">
+
+  <ul class="list">
+    <li class="items">Good And Accurate</li>
+    <li class="items">Liveness Detection</li>
+    <li class="items-1">Accuracy upto 90%</li>
+    <li class="items-1">Attendance Marking</li>
+  </ul>
+</div>
+
+{% endblock BodyHomePage %}
