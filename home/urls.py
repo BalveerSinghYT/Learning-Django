@@ -12,4 +12,4 @@ urlpatterns = [
     path('attendance', views.attendance_data, name="attendance_data")
 ]
 
-admin.site.index_title = "SAS Admin"
+admin.site.index_title = "Admin"
