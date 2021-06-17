@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from home.models import registeration, attendance
+from django.views.decorators import gzip
+from django.http import StreamingHttpResponse
+import threading
 
+# cap = 'https://100.94.58.114:8080/video'
 # password for user veer is Veer$$@@
 
 # Create your views here.
+
 
 def index(request):
     context1 = {
@@ -71,3 +76,16 @@ def attendance_data(request):
     data = registeration.objects.raw('SELECT roll_no, home_registeration.name, home_attendance.date, home_attendance.status from home_registeration inner join home_attendance on home_registeration.roll_no=home_attendance.roll_no_id;')
     print(data.columns)
     return render(request, 'attendance.html', {'data':data})
+
+# def gen(camera):
+# 	while True:
+# 		frame = camera.get_frame()
+# 		yield (b'--frame\r\n'
+# 				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+# def livefeed(request):
+# 	return StreamingHttpResponse(gen(LiveWebCam()),
+# 					content_type='multipart/x-mixed-replace; boundary=frame')
+
+# def feed(request):
+#     return render(request, 'feed.html')

@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os, whitenoise
+# import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$
+# SECRET_KEY = os.environ['SECRET_KEY']
+
 SECRET_KEY = 'x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,8 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,7 +64,7 @@ ROOT_URLCONF = 'userproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / "home/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +83,7 @@ WSGI_APPLICATION = 'userproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -84,6 +94,17 @@ DATABASES = {
     }
 }
 
+'''
+DATABASES = {
+    'default' : {
+        'ENGINE' : 'django.db.backends.postgresql',
+
+    }
+}
+'''
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -124,7 +145,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "home/static",
 ]
+STATIC_ROOT = '/static/'
 
-
+django_heroku.settings(locals())
