@@ -38,7 +38,7 @@ def loginUser(request):
         user = authenticate(username = username, password = secret)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('/attendance')
         else:
             return render(request, 'login.html')
          
