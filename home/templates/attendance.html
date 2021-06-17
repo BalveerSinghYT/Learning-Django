@@ -1,18 +1,34 @@
-{% extends 'base.html' %} 
-
-
-
+{% extends 'base.html' %}
 {% block dashboard %}
 
 <style>
-    .dashboard{
+    .dashboard {
         margin: 45px 50px 75px;
         /* border: 3px solid green; */
     }
-    .dash-header{
+
+    .dash-header {
         margin: 20px 4px 30px;
     }
 
+    h1 {
+        margin-bottom: 30px;
+        color: #5F2EEA;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 50px;
+
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+    }
+
+    thead {
+        background: #BCA4FF;
+        color: #4400ff;
+    }
 </style>
 
 
@@ -23,29 +39,27 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Roll No</th>
-            <th scope="col">Date</th>
-            <th scope="col">Status</th>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Roll No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
             {% for i in data %}
-                <tr>
+            <tr>
                 <th scope="row">{{forloop.counter}}</th>
-                    <td>{{i.name}}</td>
-                    <td>{{i.roll_no}}</td>
-                    <td>{{i.date}}</td>
-                    <td>{{i.status}}</td>
-                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                <td>{{i.name}}</td>
+                <td>{{i.roll_no}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.status}}</td>
+            </tr>
             {% endfor %}
             <tr>
-            
-        </tbody>
-        </table>
-    
 
+        </tbody>
+    </table>
 </div>
 
 {% endblock dashboard %}
