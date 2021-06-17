@@ -24,12 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$
-# SECRET_KEY = os.environ['SECRET_KEY']
-
-SECRET_KEY = 'x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$'
+SECRET_KEY = os.environ['SECRET_KEY']
+#SECRET_KEY = 'x^1*7wptq-8)4oz9h+95i6oj-y!7g803m&zf-fmq)hpb0_f!u$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
