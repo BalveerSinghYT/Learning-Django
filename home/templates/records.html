@@ -1,33 +1,65 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block DataRecords %}
-<div class= "container">
-<br>
-    <h1>Registerd Students</h1>
+
+<style>
+    .container {
+        margin: 45px 50px 75px;
+        /* border: 3px solid green; */
+    }
+
+    .dash-header {
+        margin: 20px 4px 30px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        color: #0096B7;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 50px;
+
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+    }
+
+    thead {
+        background: #82E9FF;
+        color: #4400ff;
+    }
+</style>
+
+<div class="container">
+    <div class="dash-header">
+        <h1>Registerd Students</h1>
+    </div>
     <table class="table table-bordered">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Roll No</th>
-        <th scope="col">Email</th>
-        <th scope="col">Department</th>
-        <th scope="col">Phone No</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for i in data %}
+        <thead>
             <tr>
-            <th scope="row">{{forloop.counter}}</th>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Roll No</th>
+                <th scope="col">Email</th>
+                <th scope="col">Department</th>
+                <th scope="col">Phone No</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
                 <td>{{i.name}}</td>
                 <td>{{i.roll_no}}</td>
                 <td>{{i.email}}</td>
                 <td>{{i.department}}</td>
                 <td>{{i.phone}}</td>
             </tr>
-        {% endfor %}
-        <tr>
-        
-    </tbody>
+            {% endfor %}
+            <tr>
+
+        </tbody>
     </table>
 </div>
 
